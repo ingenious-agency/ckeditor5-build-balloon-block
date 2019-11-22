@@ -5,7 +5,7 @@
 
 // The editor creator to use.
 import BalloonEditorBase from '@ckeditor/ckeditor5-editor-balloon/src/ballooneditor';
-
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -17,6 +17,7 @@ import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
+
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
@@ -58,35 +59,53 @@ BalloonEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	Alignment
 ];
 
 // Editor configuration.
 BalloonEditor.defaultConfig = {
-	blockToolbar: [
-		'heading',
-		'|',
-		'bulletedList',
-		'numberedList',
-		'|',
-		'indent',
-		'outdent',
-		'|',
-		'imageUpload',
-		'blockQuote',
-		'insertTable',
-		'mediaEmbed',
-		'|',
-		'undo',
-		'redo'
-	],
 	toolbar: {
 		items: [
+			'heading',
+			'|',
 			'bold',
 			'italic',
-			'link'
+			'link',
+			'|',
+			'bulletedList',
+			'|',
+			'alignment',
+			'|',
+			'blockQuote',
+			'|',
+			'undo',
+			'redo'
 		]
 	},
+	blockToolbar: ['imageUpload', 'mediaEmbed'],
+	heading: {
+		options: [
+			{
+				model: 'paragraph',
+				title: 'Paragraph',
+				class: 'ck-heading_paragraph'
+			},
+			{
+				model: 'heading1',
+				view: 'h1',
+				title: 'Heading 1',
+				class: 'ck-heading_heading1'
+			},
+			{
+				model: 'heading2',
+				view: 'h2',
+				title: 'Heading 2',
+				class: 'ck-heading_heading2'
+			}
+		]
+	},
+
 	image: {
 		toolbar: [
 			'imageStyle:full',
@@ -95,13 +114,6 @@ BalloonEditor.defaultConfig = {
 			'imageTextAlternative'
 		]
 	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
-	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'es'
 };
