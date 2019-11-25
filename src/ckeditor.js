@@ -31,6 +31,9 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
+import MediaUpload from './media-upload/mediaupload';
+import CustomMedia from './media-upload/custom-media/custommedia';
+
 import '../theme/theme.css';
 
 export default class BalloonEditor extends BalloonEditorBase {}
@@ -60,7 +63,9 @@ BalloonEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	Alignment
+	Alignment,
+	CustomMedia,
+	MediaUpload
 ];
 
 // Editor configuration.
@@ -83,7 +88,7 @@ BalloonEditor.defaultConfig = {
 			'redo'
 		]
 	},
-	blockToolbar: ['imageUpload', 'mediaEmbed'],
+	blockToolbar: ['imageUpload', 'mediaEmbed', 'mediaUpload'],
 	heading: {
 		options: [
 			{
