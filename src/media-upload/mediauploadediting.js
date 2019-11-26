@@ -289,6 +289,6 @@ export function isHtmlIncluded(dataTransfer) {
 
 function getmediasFromChangeItem(editor, item) {
 	return Array.from(editor.model.createRangeOn(item))
-		.filter(value => value.item.is('media'))
+		.filter(value => value.item.is('custommedia'))
 		.map(value => value.item);
 }

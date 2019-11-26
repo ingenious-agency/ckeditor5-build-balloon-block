@@ -153,8 +153,8 @@ function _stopAppearEffect(viewFigure, writer) {
 // @param {module:engine/view/containerelement~ContainerElement} viewFigure
 // @param {module:engine/view/downcastwriter~DowncastWriter} writer
 function _showPlaceholder(placeholder, viewFigure, writer) {
-	if (!viewFigure.hasClass('ck-image-upload-placeholder')) {
-		writer.addClass('ck-image-upload-placeholder', viewFigure);
+	if (!viewFigure.hasClass('ck-upload-placeholder-loader')) {
+		writer.addClass('ck-upload-placeholder-loader', viewFigure);
 	}
 
 	const viewImg = viewFigure.getChild(0);
@@ -176,8 +176,8 @@ function _showPlaceholder(placeholder, viewFigure, writer) {
 // @param {module:engine/view/containerelement~ContainerElement} viewFigure
 // @param {module:engine/view/downcastwriter~DowncastWriter} writer
 function _hidePlaceholder(viewFigure, writer) {
-	if (viewFigure.hasClass('ck-image-upload-placeholder')) {
-		writer.removeClass('ck-image-upload-placeholder', viewFigure);
+	if (viewFigure.hasClass('ck-upload-placeholder-loader')) {
+		writer.removeClass('ck-upload-placeholder-loader', viewFigure);
 	}
 
 	_removeUIElement(viewFigure, writer, 'placeholder');

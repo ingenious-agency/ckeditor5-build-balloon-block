@@ -9,7 +9,7 @@
 
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import FileDialogButtonView from '@ckeditor/ckeditor5-upload/src/ui/filedialogbuttonview';
-import imageIcon from '@ckeditor/ckeditor5-core/theme/icons/image.svg';
+import videoIcon from '../video-plus-regular.svg';
 
 function createMediaTypeRegExp(types) {
 	// Sanitize the MIME type name which may include: "+", "-" or ".".
@@ -48,8 +48,8 @@ export default class MediaUploadUi extends Plugin {
 			});
 
 			view.buttonView.set({
-				label: t('Upload and insert video'),
-				icon: imageIcon,
+				label: t('Sube e inserta un video'),
+				icon: videoIcon,
 				tooltip: true
 			});
 

@@ -91,7 +91,7 @@ export default class CustomMediaEditing extends Plugin {
 					}
 				},
 				model: (viewImage, modelWriter) =>
-					modelWriter.createElement('image', {
+					modelWriter.createElement('custommedia', {
 						src: viewImage.getAttribute('src')
 					})
 			})
